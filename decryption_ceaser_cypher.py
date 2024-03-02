@@ -121,7 +121,7 @@ class CiphertextMessage(Message):
             a = (self.apply_shift(i).split(' '))                #In this line takes the message in self and shifts it by i letters, and then makes a list of 
                                                                     #those wordsby split(''), so a is a list.
             l = [x for x in a if is_word(self.valid_words,x)]
-            print(len(l))
+            #print(len(l))
             if len(l)> length:
                 length = len(l)
                 poss_shift = i
@@ -130,21 +130,21 @@ class CiphertextMessage(Message):
 
 
 
-bb = Message('Teacher is the love')
-print(bb.apply_shift(3))
-cc = CiphertextMessage('Whdfkhu')
+bb = Message('silence is the language of god, all else is poor translation')
+print(bb.apply_shift(12))
+cc = CiphertextMessage('aqtmvkm qa bpm tivociom wn owl, itt mtam qa xwwz bzivatibqwv')
 print(cc.decrypt_message())
-print(cc.get_valid_words())
+#print(cc.get_valid_words())
 
 if __name__ == '__main__':
-#
-#    #Example test case (CiphertextMessage)
-#    ciphertext = CiphertextMessage('jgnnq')
-#    print('Expected Output:', (24, 'hello'))
-#    print('Actual Output:', ciphertext.decrypt_message())
 
-    #TODO: WRITE YOUR TEST CASES HERE
+   #Example test case (PlaintextMessage)
+   plaintext = PlaintextMessage('hello', 2)
+   print('Expected Output: jgnnq')
+   print('Actual Output:', plaintext.get_message_text_encrypted())
 
-    #TODO: best shift value and unencrypted story 
-    
-    pass #delete this line and replace with your code here
+   #Example test case (CiphertextMessage)
+   ciphertext = CiphertextMessage('jgnnq')
+   print('Expected Output:', (24, 'hello'))
+   print('Actual Output:', ciphertext.decrypt_message())
+
